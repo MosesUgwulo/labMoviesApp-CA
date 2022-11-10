@@ -18,15 +18,20 @@ function App() {
           <AuthProvider>
           
             <Routes>
-              <Route path='/signup' element={<SignUp />} />
-              <Route path='/login' element={<Login />} />
-
-              <Route path='/' element={
-              <PrivateRoute >
+              {/* <Route path='/' element={
+              <PrivateRoute>
                 <Dashboard />
               </PrivateRoute>
               }
-              />
+              /> */}
+
+              <Route element={<PrivateRoute/>}>
+                <Route path='/' element={<Dashboard />} />
+              </Route>
+
+              <Route path='/signup' element={<SignUp />} />
+              <Route path='/login' element={<Login />} />
+
               
 
             </Routes>
