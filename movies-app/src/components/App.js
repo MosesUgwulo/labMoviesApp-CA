@@ -18,16 +18,16 @@ function App() {
           <AuthProvider>
           
             <Routes>
-              {/* <Route path='/' element={
+              <Route exact path='/' element={
               <PrivateRoute>
                 <Dashboard />
               </PrivateRoute>
               }
-              /> */}
+              />
 
-              <Route element={<PrivateRoute/>}>
+              {/* <Route element={<PrivateRoute/>}>
                 <Route path='/' element={<Dashboard />} />
-              </Route>
+              </Route> */}
 
               <Route path='/signup' element={<SignUp />} />
               <Route path='/login' element={<Login />} />
