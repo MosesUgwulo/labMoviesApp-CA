@@ -1,11 +1,12 @@
 import React from 'react';
-import SignUp from './signUp';
+import SignUp from './SignUp';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import { AuthProvider } from '../contexts/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import ForgotPassword from './ForgotPassword';
+import UpdateProfile from './UpdateProfile';
 
 function App() {
 
@@ -14,9 +15,16 @@ function App() {
           <AuthProvider>
           
             <Routes>
-              <Route path='/' element={
+              <Route exact path='/' element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+              }
+              />
+
+              <Route path='/update-profile' element={
+              <PrivateRoute>
+                <UpdateProfile />
               </PrivateRoute>
               }
               />

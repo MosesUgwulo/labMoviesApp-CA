@@ -12,10 +12,6 @@ export default function PrivateRoute( {children} ) {
             if (!currentUser) {
                 Navigate('/login', { replace: true })
             }
-            else {
-                Navigate('/')
-                console.log('You are logged in')
-            }
         }, [currentUser, Navigate])
 
     return children
